@@ -1,0 +1,16 @@
+pipeline {
+    agent { label 'node1-label' }
+    stages {
+        stage('Source') {
+            steps {
+                // get the code
+                git 'https://github.com/rohitreddyrdt/spring-petclinic.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
