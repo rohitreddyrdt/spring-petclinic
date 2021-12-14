@@ -1,9 +1,0 @@
-//Scripted Pipeline
-node('rohitjdk11') {
-    stage('Source') { //Get the code
-        git branch: 'main', url: 'https://github.com/rohitreddyrdt/spring-petclinic.git'
-    }
-    stage('Build') {//Compile the code and run unit tests and create package
-        sh 'mvn clean package'
-    }
-}
